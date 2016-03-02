@@ -5,18 +5,29 @@ transactions();
 var intervalThreeID = setInterval(transactions, 5000);
 
 function transactions () {
-  $.getJSON('https://www.shapeshift.io/getcoins').success(function(result) {
+  $.getJSON('https://www.shapeshift.io/getcoins').success(function(icon) {
     $.getJSON("https://shapeshift.io/recenttx").success(function(recent) {
         $("#txs").empty();
         recent.forEach(function(obj) {
-        $("#txs").append("<li>" + " " + obj.amount + "<img alt = '" +
-                          result[obj.curIn].name + "' src='"+result[obj.curIn].image +
-                          "'/>" + " " + "<i class='fa fa-arrow-circle-o-right'></i>" +
-                          "<img alt ='" + result[obj.curOut].name + " " + "' src='" +
-                          result[obj.curOut].image + "'/>" + obj.amountOut + "</li>");
+          $("#txs").append(buildTableRow(buildTx(icon, recent, obj)));
+        // $("#txs").append("<li>" + " " + obj.amount + "<img alt = '" +
+        //                   icon[obj.curIn].name + "' src='"+icon[obj.curIn].image +
+        //                   "'/>" + " " + "<i class='fa fa-arrow-circle-o-right'></i>" +
+        //                   "<img alt ='" + icon[obj.curOut].name + " " + "' src='" +
+        //                   icon[obj.curOut].image + "'/>" + obj.amountOut + "</li>");
         });
     });
   });
+}
+
+function buildTx(icon, recent, obj){
+  return completedTx = icon[obj.curIn].image + icon[obj.curIn].image + obj.amount + "<i class='fa fa-arrow-circle-o-right'></i>" +
+                    icon[obj.curOut].name + icon[obj.curOut].image + obj.amountOut;
+
+}
+
+function buildTableRow(completedTx) {
+  $('#txs').append("<td>" + completedTx + "</td>")
 }
 
 
@@ -37,7 +48,7 @@ function compare() {
   }, function(e) {
       alert("There was an error! Check lines 25 through 36.", e);
   });
-};
+}
 
 $.getJSON("https://coincap.io/history/BTC", function(data) {
   $(".container").highcharts("StockChart", {

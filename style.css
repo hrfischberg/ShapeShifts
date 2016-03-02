@@ -1,5 +1,5 @@
-.container{
-  width: 970px !important;
+.container-fluid{
+  background-color: transparent;
 }
 
 .reset {
@@ -17,7 +17,9 @@ html {
   -o-background-size: cover;
   background-size: cover;
   opacity: 1;
+  overflow-y: scroll;
 }
+
 
 body {
   background: none;
@@ -97,6 +99,10 @@ table{
   text-align: center;
   list-style: none;
   width: 100%;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 .panel {

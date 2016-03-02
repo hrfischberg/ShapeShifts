@@ -63,12 +63,14 @@ body {
   background-color: whitesmoke;
 }
 
-#recentTx li {
+#txs{
+  text-align: center;
   list-style: none;
 }
 
-#recentTx label{
-  margin: 0px 0px 0px 5%;
+.panel-heading {
+  text-align: center;
+  font-weight: 700;
 }
 
 #reddit {

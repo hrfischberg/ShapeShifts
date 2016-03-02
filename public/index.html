@@ -33,101 +33,102 @@
       <h1>Bitcoin Markets and News <small>Created using ShapeShift, CoinCap and reddit APIs</small></h1>
   </div>
   <div class="row">
-      <div id="currentPrice">
-          <div class="col-lg-4 col-md-4 col-sm-4">
-              <label id="price">Current BTC Price<span id="bitcoinPrice"></span></label>
-          </div>
-      </div>
-      <div class="pairs">
-          <div class="col-lg-4 col-md-4 col-sm-4">
-              <select id="coinOne" class="selectpicker" data-live-search="true" data-width="fit">
-                  <option value="btc" data-icon="glyphicon glyphicon-btc">BTC</option>
-                  <option value="ltc">LTC</option>
-                  <option value="doge">DOGE</option>
-                  <option value="usdt" data-icon="glyphicon glyphicon-usd">USD</option>
-                  <option value="nxt">NXT</option>
-                  <option value="nbt">NBT</option>
-                  <option value="vrc">VRC</option>
-                  <option value="pot">POT</option>
-                  <option value="mint">MINT</option>
-                  <option value="clam">CLAM</option>
-                  <option value="xmr">XMR</option>
-                  <option value="msc">MSC</option>
-                  <option value="maid">MAID</option>
-                  <option value="flo">FLO</option>
-                  <option value="eth">ETH</option>
-                  <option value="dash">DASH</option>
-                  <option value="vtc">VTC</option>
-                  <option value="btcd">BTCD</option>
-                  <option value="blk">BLK</option>
-                  <option value="dgb">DGB</option>
-                  <option value="mona">MONA</option>
-                  <option value="ftc">FTC</option>
-                  <option value="rdd">RDD</option>
-                  <option value="sdc">SDC</option>
-                  <option value="start">START</option>
-                  <option value="uno">UNO</option>
-                  <option value="doge">ARCH</option>
-                  <option value="hyper">HYPER</option>
-                  <option value="ppc">PPC</option>
-                  <option value="nvc">NVC</option>
-              </select>
-              <select id="coinTwo" class="selectpicker" data-live-search="true" data-width="fit">
-                  <option value="usdt" data-icon="glyphicon glyphicon-usd">USD</option>
-                  <option value="ltc">LTC</option>
-                  <option value="btc" data-icon="glyphicon glyphicon-btc">BTC</option>
-                  <option value="doge">DOGE</option>
-                  <option value="nxt">NXT</option>
-                  <option value="nbt">NBT</option>
-                  <option value="vrc">VRC</option>
-                  <option value="pot">POT</option>
-                  <option value="mint">MINT</option>
-                  <option value="clam">CLAM</option>
-                  <option value="xmr">XMR</option>
-                  <option value="msc">MSC</option>
-                  <option value="maid">MAID</option>
-                  <option value="flo">FLO</option>
-                  <option value="eth">ETH</option>
-                  <option value="dash">DASH</option>
-                  <option value="vtc">VTC</option>
-                  <option value="btcd">BTCD</option>
-                  <option value="blk">BLK</option>
-                  <option value="dgb">DGB</option>
-                  <option value="mona">MONA</option>
-                  <option value="ftc">FTC</option>
-                  <option value="rdd">RDD</option>
-                  <option value="sdc">SDC</option>
-                  <option value="start">START</option>
-                  <option value="uno">UNO</option>
-                  <option value="arch">ARCH</option>
-                  <option value="hyper">HYPER</option>
-                  <option value="ppc">PPC</option>
-                  <option value="nvc">NVC</option>
-              </select>
-              <button id="priceFinder">Find Pair</button>
-              <!-- <div>Selected Pair: <span id="selectedPair"></span></div> -->
-              <div>Exchange Rate(Updated every 30 seconds): <br>
-                <span id="exchangeRate"></span>
-              </div>
-          </div>
-      </div>
-      <div id="currentPrice">
-          <div class="col-lg-4 col-md-4 col-sm-4">
-              <label id="cap">Current BTC Market Cap<span id="bitcoinMarketCap"></span></label>
-          </div>
-      </div>
-    </div>
-    <div class="jumbotron">
-        <div class="container">
+    <div id="currentPrice">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <label id="price">Current BTC Price<span id="bitcoinPrice"></span></label>
         </div>
     </div>
-    <div id="recentTx">
-        <label>Recent Transactions</label>
-        <table>
-            <tr>
-                <td id="txs">
-                </td>
-            </tr>
+    <div class="pairs">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <select id="coinOne" class="selectpicker" data-live-search="true" data-width="fit">
+                <option value="btc" data-icon="glyphicon glyphicon-btc">BTC</option>
+                <option value="ltc">LTC</option>
+                <option value="doge">DOGE</option>
+                <option value="usdt" data-icon="glyphicon glyphicon-usd">USD</option>
+                <option value="nxt">NXT</option>
+                <option value="nbt">NBT</option>
+                <option value="vrc">VRC</option>
+                <option value="pot">POT</option>
+                <option value="mint">MINT</option>
+                <option value="clam">CLAM</option>
+                <option value="xmr">XMR</option>
+                <option value="msc">MSC</option>
+                <option value="maid">MAID</option>
+                <option value="flo">FLO</option>
+                <option value="eth">ETH</option>
+                <option value="dash">DASH</option>
+                <option value="vtc">VTC</option>
+                <option value="btcd">BTCD</option>
+                <option value="blk">BLK</option>
+                <option value="dgb">DGB</option>
+                <option value="mona">MONA</option>
+                <option value="ftc">FTC</option>
+                <option value="rdd">RDD</option>
+                <option value="sdc">SDC</option>
+                <option value="start">START</option>
+                <option value="uno">UNO</option>
+                <option value="doge">ARCH</option>
+                <option value="hyper">HYPER</option>
+                <option value="ppc">PPC</option>
+                <option value="nvc">NVC</option>
+            </select>
+            <select id="coinTwo" class="selectpicker" data-live-search="true" data-width="fit">
+                <option value="usdt" data-icon="glyphicon glyphicon-usd">USD</option>
+                <option value="ltc">LTC</option>
+                <option value="btc" data-icon="glyphicon glyphicon-btc">BTC</option>
+                <option value="doge">DOGE</option>
+                <option value="nxt">NXT</option>
+                <option value="nbt">NBT</option>
+                <option value="vrc">VRC</option>
+                <option value="pot">POT</option>
+                <option value="mint">MINT</option>
+                <option value="clam">CLAM</option>
+                <option value="xmr">XMR</option>
+                <option value="msc">MSC</option>
+                <option value="maid">MAID</option>
+                <option value="flo">FLO</option>
+                <option value="eth">ETH</option>
+                <option value="dash">DASH</option>
+                <option value="vtc">VTC</option>
+                <option value="btcd">BTCD</option>
+                <option value="blk">BLK</option>
+                <option value="dgb">DGB</option>
+                <option value="mona">MONA</option>
+                <option value="ftc">FTC</option>
+                <option value="rdd">RDD</option>
+                <option value="sdc">SDC</option>
+                <option value="start">START</option>
+                <option value="uno">UNO</option>
+                <option value="arch">ARCH</option>
+                <option value="hyper">HYPER</option>
+                <option value="ppc">PPC</option>
+                <option value="nvc">NVC</option>
+            </select>
+            <button id="priceFinder">Find Pair</button>
+            <!-- <div>Selected Pair: <span id="selectedPair"></span></div> -->
+            <div>Exchange Rate(Updated every 30 seconds):
+                <br>
+                <span id="exchangeRate"></span>
+            </div>
+        </div>
+    </div>
+    <div id="currentPrice">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <label id="cap">Current BTC Market Cap<span id="bitcoinMarketCap"></span></label>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron">
+      <div class="container">
+      </div>
+  </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Recent Transactions</div>
+        <table class="table">
+          <tr>
+            <td id="txs">
+            </td>
+          </tr>
         </table>
     </div>
     <div id="reddit"><span id="posts"></span></div>

@@ -19,7 +19,6 @@
 </head>
 
 <body>
-  <div id="bgImg"></div>
   <nav class="navbar navbar-default">
       <div class="container-fluid">
           <div class="navbar-header">
@@ -32,14 +31,15 @@
   <div class="page-header">
       <h1>Bitcoin Markets and News <small>Created using ShapeShift, CoinCap and reddit APIs</small></h1>
   </div>
-  <div class="row">
+  <div class="conatiner">
+  <div class="row" id="marketInfo">
     <div id="currentPrice">
-        <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <label id="price">Current BTC Price<span id="bitcoinPrice"></span></label>
         </div>
     </div>
     <div class="pairs">
-        <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <select id="coinOne" class="selectpicker" data-live-search="true" data-width="fit">
                 <option value="btc" data-icon="glyphicon glyphicon-btc">BTC</option>
                 <option value="ltc">LTC</option>
@@ -105,14 +105,14 @@
                 <option value="nvc">NVC</option>
             </select>
             <button id="priceFinder">Find Pair</button>
-            <div>Exchange Rate(Updated every 30 seconds):
+            <div id="exchangeNote">Exchange Rate(Updated every 30 seconds):
                 <br>
                 <span id="exchangeRate"></span>
             </div>
         </div>
     </div>
     <div id="currentPrice">
-      <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <label id="cap">Current BTC Market Cap<span id="bitcoinMarketCap"></span></label>
       </div>
     </div>
@@ -121,16 +121,37 @@
       <div class="container">
       </div>
   </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Recent Transactions</div>
-        <table class="table">
-          <tr>
-            <td id="txs">
-            </td>
-          </tr>
-        </table>
+  <div class="row-fluid" id="row1">
+        <div id="recents">Recent Transactions</div>
+  </div>
+  <div class="row">
+    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 reset">
+      <div class="panel panel-primary">
+          <table class="table table-bordered">
+            <tr>
+              <td id="txs">
+              </td>
+            </tr>
+          </table>
+      </div>
     </div>
-    <div id="reddit"><span id="posts"></span></div>
+  </div>
+  <div class="row-fluid" id="row2">
+    <div id="rbtc">r/bitcoin</div>
+  </div>
+  <div class="row">
+    <!-- <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 reset"> -->
+      <div class="panel panel-primary">
+          <table class="table">
+            <tr>
+              <td id="reddit"><span id="posts"></span></td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  <!-- </div> -->
+</div>
+    <!-- <div id="reddit"><span id="posts"></span></div> -->
 </body>
 
 </html>

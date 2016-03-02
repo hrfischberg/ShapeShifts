@@ -19,9 +19,9 @@ function transactions () {
   });
 }
 
-var intervalTwoID = setInterval(compare, 30000);
 
 function compare() {
+  console.log('compare');
   $.getJSON("https://www.shapeshift.io/marketinfo/" + $("#coinOne").val() + "_" + $("#coinTwo").val()).then(function(price) {
       if ($("#coinOne").val() === $("#coinTwo").val()) {
           $("#selectedPair").empty();
@@ -83,7 +83,9 @@ reddit.hot('Bitcoin').limit(5).fetch(function(res) {
 });
 
 $("#priceFinder").on("click", function() {
-  return compare();
+  compare();
+  var intervalTwoID = setInterval(compare, 30000);
+
 });
 
   $('.selectpicker').selectpicker({

@@ -1,21 +1,30 @@
+.container{
+  width: 970px !important;
+}
+
+.reset {
+  width: 100%;
+}
+
 .navbar {
   border: none;
 }
 
-#bgImg {
-  background: url(background.jpg) no-repeat center center fixed;
-  min-height: 97.2%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.4;
+html {
+  background: url(background1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 1;
 }
 
 body {
   background: none;
+}
+
+body,html{
+  box-sizing: border-box;
 }
 
 .container-fluid{
@@ -30,15 +39,22 @@ body {
 
 .page-header {
   text-align: center;
+  margin: 0;
+  color: white;
 }
 
 .page-header small{
   font-size: 10px;
+  color: white;
 }
 
 .pairs{
   display: block;
   text-align: center;
+}
+
+#marketInfo{
+  margin: 10px 0 0 0;
 }
 
 #priceFinder{
@@ -48,39 +64,88 @@ body {
 #exchangeRate {
   font-weight: 700;
   font-size: 20px;
+  color: white;
+}
+
+#exchangeNote{
+  color: white;
 }
 
 #price{
   float: left;
   display: inline-block;
   margin-left: 5%;
+  color: white;
 }
 
 #cap {
   float: right;
   display: inline-block;
   margin-right: 5%;
+  color: white;
+}
+
+table{
+  background-color: transparent;
 }
 
 #recentTx{
-  padding: 0 0 0px 42%;
   background-color: whitesmoke;
 }
 
 #txs{
   text-align: center;
   list-style: none;
+  width: 100%;
 }
 
-.panel-heading {
-  text-align: center;
-  font-weight: 700;
-  margin: 0px;
+.panel {
+      /* margin-bottom: 20px; */
+    /* background-color: #fff; */
+    /* border: 1px solid transparent; */
+    /* border-radius: 4px; */
+    /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); */
+    /* box-shadow: 0 1px 1px rgba(0,0,0,.05); */
+}
+/*
+#panelsBS{
+  background-color: transparent;
+}*/
+
+.panel-primary {
+  border: none;
+  margin: 0;
 }
 
-#reddit {
+#row1 {
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: #4D93F7;
+    opacity: .8;
+}
+
+#row2 {
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: #4D93F7;
+    opacity: .8;
+}
+
+
+table{
+  background-color: transparent;
+}
+
+/*#reddit {
   border: 1px solid black;
-}
+  position: absolute;
+  border: none;
+  width: 100%;
+  background-color: white;
+  width: 97.7%
+}*/
 
 #reddit td{
   border-bottom: 1px solid black;
@@ -101,4 +166,9 @@ body {
   margin: 0 auto;
   padding: 0;
   background-color: white;
+}
+.row {
+  margin-right: -15px;
+    /* margin-left: -15px; */
+}
 }

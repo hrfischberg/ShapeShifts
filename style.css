@@ -1,16 +1,22 @@
-#bodyBackground{
-    position: relative;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.4;
+#bgImg {
+  background: url(background.jpg) no-repeat center center fixed;
+  min-height: 97.2%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+
+body {
+  background: none;
 }
 
 .container-fluid{
   background-color: #32347F;
+  opacity: .9;
 }
 
 #logo {
@@ -35,6 +41,11 @@
   margin: .5%;
 }
 
+#exchangeRate {
+  font-weight: 700;
+  font-size: 20px;
+}
+
 #price{
   float: left;
   display: inline-block;
@@ -47,12 +58,17 @@
   margin-right: 5%;
 }
 
-/*currentPrice, h2{
-  margin: 0 auto;
-}*/
-
 #recentTx{
-  margin: 0 0 0 40%;
+  padding: 0 0 0px 42%;
+  background-color: whitesmoke;
+}
+
+#recentTx li {
+  list-style: none;
+}
+
+#recentTx label{
+  margin: 0px 0px 0px 3%;
 }
 
 #reddit {
@@ -77,6 +93,5 @@
 .jumbotron {
   margin: 0 auto;
   padding: 0;
-  background-color: inherit;
-  opacity: 0.7;
+  background-color: white;
 }

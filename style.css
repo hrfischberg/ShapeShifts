@@ -75,6 +75,7 @@ body {
 .panel-heading {
   text-align: center;
   font-weight: 700;
+  margin: 0px;
 }
 
 #reddit {

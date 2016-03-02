@@ -28,7 +28,7 @@ function compare() {
           alert("Please change pair!");
       } else {
           $("#selectedPair").html(price.pair);
-          $("#exchangeRate").html("$" + price.rate);
+          $("#exchangeRate").html(price.rate);
 
           var val = localStorage.getItem(price.pair);
           var count = Number( val )+1;

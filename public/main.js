@@ -33,14 +33,28 @@ function compare() {
   });
 };
 
-// $(function() {
-//     $('#coinOne').on('load', function() {
-//         localStorage.setItem('coinOneChoice', this.value);
-//     });
-//     if(localStorage.getItem('coinOneChoice')){
-//         $('#coinOne').val(localStorage.getItem('coinOneChoice'));
-//     }
-// });
+$(function () {
+    $('#coinOne').change(function () {
+        localStorage.setItem('coinOneChoice', this.value);
+    });
+    if (localStorage.getItem('coinOneChoice')) {
+
+        $('#coinOne').val(localStorage.getItem('coinOneChoice')).trigger('change');
+    }
+        // $("#coinOne").val();
+});
+
+
+$(function () {
+    $('#coinTwo').change(function () {
+        localStorage.setItem('coinTwoChoice', this.value);
+    });
+    if (localStorage.getItem('coinTwoChoice')) {
+
+        $('#coinTwo').val(localStorage.getItem('coinTwoChoice')).trigger('change');
+    }
+        // $("#coinTwo").val();
+});
 
 
 

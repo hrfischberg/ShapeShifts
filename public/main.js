@@ -5,20 +5,19 @@ transactions();
 var intervalThreeID = setInterval(transactions, 5000);
 
 function transactions () {
-  $.getJSON('https://www.shapeshift.io/getcoins').success(function(result) {
+  $.getJSON('https://www.shapeshift.io/getcoins').success(function(icon) {
     $.getJSON("https://shapeshift.io/recenttx").success(function(recent) {
         $("#txs").empty();
         recent.forEach(function(obj) {
-        $("#txs").append("<li>" + " " + obj.amount + "<img alt = '" +
-                          result[obj.curIn].name + "' src='"+result[obj.curIn].image +
+        $("#txs").append("<td>" + " " + obj.amount.toFixed(3) + "<img alt = '" +
+                          icon[obj.curIn].name + "' src='"+icon[obj.curIn].image +
                           "'/>" + " " + "<i class='fa fa-arrow-circle-o-right'></i>" +
-                          "<img alt ='" + result[obj.curOut].name + " " + "' src='" +
-                          result[obj.curOut].image + "'/>" + obj.amountOut + "</li>");
+                          "<img alt ='" + icon[obj.curOut].name + " " + "' src='" +
+                          icon[obj.curOut].image + "'/>" + obj.amountOut + "</td>");
         });
     });
   });
 }
-
 
 function compare() {
   console.log('compare');
@@ -74,11 +73,10 @@ function marketData() {
   });
 }
 
-// Fetch the 5 hottest posts on /r/Bitcoin
 reddit.hot('Bitcoin').limit(5).fetch(function(res) {
-    // res contains JSON parsed response from Reddit
+  console.log(res);
   for (i = 1; i < res.data.children.length; i++) {
-    $('#reddit').append("<table><tr><td>" + "<a href='https://www.reddit.com" + res.data.children[i].data.permalink + "'>" + res.data.children[i].data.title + "</a>" + "</td></tr></table>");
+    $('#reddit').append("<td>" + "<a href='https://www.reddit.com" + res.data.children[i].data.permalink + "'>" + res.data.children[i].data.title + "</a>" + "<p>" + "</p>" + "<p> Post authored by: " + res.data.children[i].data.author + "</p>" + "<p>" + "Number of comments: " + res.data.children[i].data.num_comments + "</p>" + "</td></tr></table>");
   }
 });
 

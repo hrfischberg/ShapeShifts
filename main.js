@@ -9,27 +9,15 @@ function transactions () {
     $.getJSON("https://shapeshift.io/recenttx").success(function(recent) {
         $("#txs").empty();
         recent.forEach(function(obj) {
-          $("#txs").append(buildTableRow(buildTx(icon, recent, obj)));
-        // $("#txs").append("<li>" + " " + obj.amount + "<img alt = '" +
-        //                   icon[obj.curIn].name + "' src='"+icon[obj.curIn].image +
-        //                   "'/>" + " " + "<i class='fa fa-arrow-circle-o-right'></i>" +
-        //                   "<img alt ='" + icon[obj.curOut].name + " " + "' src='" +
-        //                   icon[obj.curOut].image + "'/>" + obj.amountOut + "</li>");
+        $("#txs").append("<td>" + " " + obj.amount.toFixed(3) + "<img alt = '" +
+                          icon[obj.curIn].name + "' src='"+icon[obj.curIn].image +
+                          "'/>" + " " + "<i class='fa fa-arrow-circle-o-right'></i>" +
+                          "<img alt ='" + icon[obj.curOut].name + " " + "' src='" +
+                          icon[obj.curOut].image + "'/>" + obj.amountOut + "</td>");
         });
     });
   });
 }
-
-function buildTx(icon, recent, obj){
-  return completedTx = icon[obj.curIn].image + icon[obj.curIn].image + obj.amount + "<i class='fa fa-arrow-circle-o-right'></i>" +
-                    icon[obj.curOut].name + icon[obj.curOut].image + obj.amountOut;
-
-}
-
-function buildTableRow(completedTx) {
-  $('#txs').append("<td>" + completedTx + "</td>")
-}
-
 
 function compare() {
   console.log('compare');
@@ -48,7 +36,7 @@ function compare() {
   }, function(e) {
       alert("There was an error! Check lines 25 through 36.", e);
   });
-}
+};
 
 $.getJSON("https://coincap.io/history/BTC", function(data) {
   $(".container").highcharts("StockChart", {
@@ -85,11 +73,10 @@ function marketData() {
   });
 }
 
-// Fetch the 5 hottest posts on /r/Bitcoin
 reddit.hot('Bitcoin').limit(5).fetch(function(res) {
-    // res contains JSON parsed response from Reddit
+  console.log(res);
   for (i = 1; i < res.data.children.length; i++) {
-    $('#reddit').append("<table><tr><td>" + "<a href='https://www.reddit.com" + res.data.children[i].data.permalink + "'>" + res.data.children[i].data.title + "</a>" + "</td></tr></table>");
+    $('#reddit').append("<td>" + "<a href='https://www.reddit.com" + res.data.children[i].data.permalink + "'>" + res.data.children[i].data.title + "</a>" + "<p>" + "</p>" + "<p> Post authored by: " + res.data.children[i].data.author + "</p>" + "<p>" + "Number of comments: " + res.data.children[i].data.num_comments + "</p>" + "</td></tr></table>");
   }
 });
 

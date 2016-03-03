@@ -1,3 +1,13 @@
+html {
+  background: url(background1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 1;
+  overflow-y: scroll;
+}
+
 .container-fluid{
   background-color: transparent;
 }
@@ -10,23 +20,17 @@
   border: none;
 }
 
-html {
-  background: url(background1.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  opacity: 1;
-  overflow-y: scroll;
-}
-
-
 body {
   background: none;
 }
 
-body,html{
-  box-sizing: border-box;
+#exchangeButton{
+  font-size: 25px;
+  color:white;
+}
+
+#alien{
+  font-size: 30px;
 }
 
 .container-fluid{
@@ -95,14 +99,16 @@ table{
   background-color: whitesmoke;
 }
 
-#txs{
+#transactionHeader{
   text-align: center;
-  list-style: none;
-  width: 100%;
 }
 
-.no-padding {
-  padding: 0;
+#chartIcon {
+  font-size: 30px;
+}
+
+#txs{
+  list-style: none;
 }
 
 .panel-primary {
@@ -142,10 +148,14 @@ table{
   font-weight: 700;
 }
 
+#redditHeader {
+  text-align: center;
+}
+
 #txs img {
   width: 35px;
   height: 35px;
-  margin: 5px;
+  margin: 3px;
 }
 
 #txs td {
@@ -154,7 +164,7 @@ table{
 
 .fa-arrow-circle-o-right:before{
   font-size: 15px;
-  margin: 3px;
+  margin-right: 8px;
 }
 
 .jumbotron {
@@ -162,6 +172,6 @@ table{
   padding: 0;
   background-color: white;
 }
-.row {
+/*.row {
   margin-right: -15px;
-}
+}*/

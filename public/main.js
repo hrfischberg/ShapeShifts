@@ -20,23 +20,29 @@ function transactions () {
 }
 
 function compare() {
-  console.log('compare');
+  // console.log('compare');
   $.getJSON("https://www.shapeshift.io/marketinfo/" + $("#coinOne").val() + "_" + $("#coinTwo").val()).then(function(price) {
       if ($("#coinOne").val() === $("#coinTwo").val()) {
-          $("#selectedPair").empty();
+          // $("#selectedPair").empty();
           alert("Please change pair!");
       } else {
-          $("#selectedPair").html(price.pair);
           $("#exchangeRate").html(price.rate);
-
-          var val = localStorage.getItem(price.pair);
-          var count = Number( val )+1;
-          localStorage.setItem(price.pair, count);
       }
   }, function(e) {
       alert("There was an error! Check lines 25 through 36.", e);
   });
 };
+
+// $(function() {
+//     $('#coinOne').on('load', function() {
+//         localStorage.setItem('coinOneChoice', this.value);
+//     });
+//     if(localStorage.getItem('coinOneChoice')){
+//         $('#coinOne').val(localStorage.getItem('coinOneChoice'));
+//     }
+// });
+
+
 
 $.getJSON("https://coincap.io/history/BTC", function(data) {
   $(".container").highcharts("StockChart", {
@@ -91,11 +97,11 @@ $("#priceFinder").on("click", function() {
     size: 5
   });
 
-$("#priceFinder").on('click', function(){
-  var currencies = '';
-  $('button[data-id]').each(function(i) {
-    currencies += $(this).attr('title');
-  });
-  console.log(currencies);
-});
+// $("#priceFinder").on('click', function(){
+//   var currencies = '';
+//   $('button[data-id]').each(function(i) {
+//     currencies += $(this).attr('title');
+//   });
+//   console.log("Dize", currencies);
+// });
 });

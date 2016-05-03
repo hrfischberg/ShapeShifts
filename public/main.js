@@ -9,11 +9,11 @@ function transactions () {
     $.getJSON("https://shapeshift.io/recenttx").success(function(recent) {
         $("#txs").empty();
         recent.forEach(function(obj) {
-        $("#txs").append("<td>" + " " + obj.amount.toFixed(3) + "<img alt = '" +
+        $("#txs").append("<td>" + " " + obj.amount.toFixed(2) + "<img alt = '" +
                           icon[obj.curIn].name + "' src='"+icon[obj.curIn].image +
                           "'/>" + " " + "<i class='fa fa-arrow-circle-o-right'></i>" +
                           "<img alt ='" + icon[obj.curOut].name + " " + "' src='" +
-                          icon[obj.curOut].image + "'/>" + obj.amountOut + "</td>");
+                          icon[obj.curOut].image + "'/>" + obj.curOut + "</td>");
         });
     });
   });
@@ -106,12 +106,4 @@ $("#priceFinder").on("click", function() {
     style: 'btn-success',
     size: 5
   });
-
-// $("#priceFinder").on('click', function(){
-//   var currencies = '';
-//   $('button[data-id]').each(function(i) {
-//     currencies += $(this).attr('title');
-//   });
-//   console.log("Dize", currencies);
-// });
 });

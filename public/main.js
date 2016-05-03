@@ -9,11 +9,11 @@ function transactions () {
     $.getJSON("https://shapeshift.io/recenttx").success(function(recent) {
         $("#txs").empty();
         recent.forEach(function(obj) {
-        $("#txs").append("<td>" + " " + obj.amount.toFixed(2) + "<img alt = '" +
+        $("#txs").append("<td>" + " " + "<img alt = '" +
                           icon[obj.curIn].name + "' src='"+icon[obj.curIn].image +
                           "'/>" + " " + "<i class='fa fa-arrow-circle-o-right'></i>" +
                           "<img alt ='" + icon[obj.curOut].name + " " + "' src='" +
-                          icon[obj.curOut].image + "'/>" + obj.curOut + "</td>");
+                          icon[obj.curOut].image + "'/>" + obj.amount.toFixed(3) + "</td>");
         });
     });
   });

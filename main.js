@@ -9,7 +9,7 @@ function transactions () {
     $.getJSON("https://shapeshift.io/recenttx").success(function(recent) {
         $("#txs").empty();
         recent.forEach(function(obj) {
-        $("#txs").append("<td>" + " " + obj.amount.toFixed(3) + "<img alt = '" +
+        $("#txs").append("<td>" + " " + obj.amount.toFixed(2) + "<img alt = '" +
                           icon[obj.curIn].name + "' src='"+icon[obj.curIn].image +
                           "'/>" + " " + "<i class='fa fa-arrow-circle-o-right'></i>" +
                           "<img alt ='" + icon[obj.curOut].name + " " + "' src='" +
@@ -20,10 +20,8 @@ function transactions () {
 }
 
 function compare() {
-  console.log('compare');
   $.getJSON("https://www.shapeshift.io/marketinfo/" + $("#coinOne").val() + "_" + $("#coinTwo").val()).then(function(price) {
       if ($("#coinOne").val() === $("#coinTwo").val()) {
-          // $("#selectedPair").empty();
           alert("Please change pair!");
       } else {
           $("#exchangeRate").html(price.rate);

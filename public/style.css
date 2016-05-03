@@ -91,7 +91,7 @@ body {
   color: white;
 }
 
-table{
+table {
   background-color: transparent;
 }
 
@@ -109,6 +109,7 @@ table{
 
 #txs{
   list-style: none;
+  text-align: center;
 }
 
 .panel-primary {

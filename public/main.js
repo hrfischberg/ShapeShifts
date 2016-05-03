@@ -20,7 +20,6 @@ function transactions () {
 }
 
 function compare() {
-  // console.log('compare');
   $.getJSON("https://www.shapeshift.io/marketinfo/" + $("#coinOne").val() + "_" + $("#coinTwo").val()).then(function(price) {
       if ($("#coinOne").val() === $("#coinTwo").val()) {
           // $("#selectedPair").empty();
@@ -31,7 +30,7 @@ function compare() {
   }, function(e) {
       alert("There was an error! Check lines 25 through 36.", e);
   });
-};
+}
 
 $(function () {
     $('#coinOne').change(function () {
@@ -41,7 +40,6 @@ $(function () {
 
         $('#coinOne').val(localStorage.getItem('coinOneChoice')).trigger('change');
     }
-        // $("#coinOne").val();
 });
 
 
@@ -53,7 +51,6 @@ $(function () {
 
         $('#coinTwo').val(localStorage.getItem('coinTwoChoice')).trigger('change');
     }
-        // $("#coinTwo").val();
 });
 
 
@@ -94,7 +91,6 @@ function marketData() {
 }
 
 reddit.hot('Bitcoin').limit(5).fetch(function(res) {
-  console.log(res);
   for (i = 1; i < res.data.children.length; i++) {
     $('#reddit').append("<td>" + "<a href='https://www.reddit.com" + res.data.children[i].data.permalink + "'>" + res.data.children[i].data.title + "</a>" + "<p>" + "</p>" + "<p> Post authored by: " + res.data.children[i].data.author + "</p>" + "<p>" + "Number of comments: " + res.data.children[i].data.num_comments + "</p>" + "</td></tr></table>");
   }

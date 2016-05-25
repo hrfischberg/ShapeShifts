@@ -44,8 +44,9 @@ body {
 }
 
 #logo {
-  width: 20%;
-  height: 160%;
+ position: absolute;
+ top: .6rem;
+ height: 3rem;
 }
 
 .page-header {
